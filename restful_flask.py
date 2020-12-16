@@ -13,9 +13,11 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False    #To stop to track modifi
 app.secret_key = "mine"
 api=Api(app)
 
-@app.before_request
-def table():
-    db.create_all()
+#MOVE TO RUN.PY FILE
+# @app.before_request
+# def table():
+#     db.create_all()
+
 
 jwt = JWT(app, authenticate, identity)  # /auth
 
